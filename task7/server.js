@@ -21,15 +21,7 @@ var server = http.createServer(function(request, response){
 
 
   console.log('HTTP 路径为\n' + path)
-  if(path == '/style.css'){
-    response.setHeader('Content-Type', 'text/css; charset=utf-8')
-    response.write('body{background-color: #fff;}h1{color: #aaa;}')
-    response.end()
-  }else if(path == '/main.js'){
-    response.setHeader('Content-Type', 'text/javascript; charset=utf-8')
-    response.write('alert("hi")')
-    response.end()
-  }else if(path == '/'){
+  if(path == '/'){
     response.setHeader('Content-Type', 'text/html; charset=utf-8')
     response.write('<!DOCTYPE>\n<html>'  + 
       '<head><link rel="stylesheet" href="/style.css">' +
@@ -37,6 +29,14 @@ var server = http.createServer(function(request, response){
       '<h1>你好无聊</h1>' +
       '<script src="/main.js"></script>' +
       '</body></html>')
+    response.end()
+  }else if(path == '/style.css'){
+    response.setHeader('Content-Type', 'text/css; charset=utf-8')
+    response.write('body{background-color: #fff;}h1{color: #aaa;}')
+    response.end()
+  }else if(path == '/main.js'){
+    response.setHeader('Content-Type', 'text/javascript; charset=utf-8')
+    response.write('alert("hi")')
     response.end()
   }else{
     response.statusCode = 404
