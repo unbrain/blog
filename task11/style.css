@@ -8,6 +8,10 @@ body{
     margin: 0;
     padding: 0;
 }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
 .logo {
     float: left;
@@ -90,9 +94,12 @@ body{
     max-width: 940px;
     margin: 0 auto;
     background-color: white;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5)
 }
 
 .userCard .welcome {
+    font-family: Helvetica;
+    font-weight: bold;
     color: white;
     background-color: rgb(232, 103, 107);
     padding: 4px 16px;
@@ -170,8 +177,45 @@ body{
     padding: 10px 0;
     margin: 12px;
     display: inline-block;
+    transition: background-color 1s;
 } 
 
 .userCard footer a:hover {
     background-color: #cf5d5f;
 } 
+
+.resumeDown {
+    text-align: center;   
+}
+
+.resumeDown a{
+    font-size: 16px;
+    line-height: 16px;
+    padding: 21px 80px;
+    border: 1px solid #cdcfd1;
+    background: #efefef;
+    display: inline-block;
+    border-radius: 2px;
+    color: #3d4451;
+    font-weight: bold;
+    margin: 32px 0;
+    transition: box-shadow 0.2s;
+}
+
+.resumeDown a:hover {
+    box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.2)
+
+}
+
+body > main {
+    margin-top: -340px; 
+}
+
+.selfIntroduction {
+    max-width: 940px;
+    margin: 0 auto;
+    font-family: Helvetica;
+    text-align: center;
+    line-height: 2em;
+    font-size: 1em;
+}
