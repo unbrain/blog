@@ -20,15 +20,34 @@ ol, li {    list-style: none;}
 
 @keyframes s{    0%{        width: 0px;        height: 0px;        opacity: 1;    }    100%{        width: 100px;        height: 100px;        opacity: 0;    }}
 
-.topNavBar {    padding: 20px 0;    position: fixed;    left: 0;    top: 0;    width: 100%;    transition: all 0.3s;}
+.topNavBar {    padding: 20px 0;    position: fixed;    left: 0;    top: 0;    width: 100%;    transition: all 0.3s;    color: #ccc;}
 .topNavBar.active{    background-color: #fff;    z-index: 1;    color: #3d4451;    box-shadow: 0px 14px 61px -7px rgba(0,0,0,0.75);    padding: 10px 0 ;    transform: scale();}
 .topNavBar-inner {    padding: 0 16px;}
 
 .topNavBar nav {    padding-top: 7px;    float: right;}
 .topNavBar nav > ul {    margin: 0;    padding: 0;}
 .topNavBar nav > ul > li {    float: left;    list-style: none;    margin-left: 17px;    margin-right: 17px;}
-.topNavBar nav > ul > li > a {    text-decoration: none;    font-size: 12px;    color: #ccc;    border-bottom: 3px solid transparent;    border-top: 3px solid transparent;    padding: 5px 0;    display: block;    transition: all 0.3s;}
-.topNavBar nav > ul > li > a:hover{    border-bottom: 3px solid #f55;}
+.topNavBar nav > ul > li > a {    text-decoration: none;    font-size: 12px;    color: inherit;    border-bottom: 3px solid transparent;
+    border-top: 3px solid transparent;    padding: 5px 0;    display: block;    transition: all 0.3s;   position: relative;}
+.topNavBar nav > ul > li > a:hover::after{
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 3px;
+    background: rgb(232, 103, 107);
+    animation: navBorder .5s;
+}
+@keyframes navBorder{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}
 
 .banner {    background-image: url(./img/mountain.jpg);    height: 515px;    background-size: cover;}
 .banner .mark {    height: 515px;    background-color: rgba(0, 0, 0, 0.6);}
