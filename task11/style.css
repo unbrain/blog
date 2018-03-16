@@ -1,356 +1,88 @@
-body{
-    margin: 0;
-    background: #efefef;
-    color: black;
-}
+* {    margin: 0;    padding: 0;}
+body{    margin: 0;    background: #efefef;    color: black;}
+body > main {    margin-top: -340px; }
+a {   color: inherit;    text-decoration: none;}
+ol, li {    list-style: none;}
+.logo {    float: left;    font-size: 24px;    font-family: 'Arial Black';    padding-top: 3px;    padding-bottom: 4px;    
+    font-weight: bold;}
 
-* {
-    margin: 0;
-    padding: 0;
-}
-a {
-    color: inherit;
-    text-decoration: none;
-}
+.rs {    margin-right: 4px;    color: #e6686a;    cursor: pointer;}
+.card {    color: #9a9da2;    cursor: pointer;}
+.clearfix::after {    content: '';    display: block;    clear: both;}
 
-ol, li {
-    list-style: none;
-}
+.loadingPage{    display: none;    position: fixed;    top: 0;    left: 0;    width: 100%;    height: 100%;    background: #9a9da2;
+    z-index: 1;    justify-content: center;    align-items: center;}
+.loadingPage.active {    display: flex;}
 
-.logo {
-    float: left;
-    font-size: 24px;
-    font-family: 'Arial Black';
-    padding-top: 3px;
-    padding-bottom: 4px;
-    font-weight: bold;
-}
+.loading {    width: 100px;    height: 100px;    position: relative;}
+.loading::before, .loading::after {    content: '';    width: 0px;    height: 0px;    border-radius: 50%;    background: #000;    position: absolute;    bottom: 0;    top: 0;    left: 0;    right: 0;    margin: auto;    animation:  s linear infinite 1.5s;}
+.loading::after {    animation-delay: 0.75s;}
 
-.rs {
-    margin-right: 4px;
-    color: #e6686a;
-    cursor: pointer;
-}
+@keyframes s{    0%{        width: 0px;        height: 0px;        opacity: 1;    }    100%{        width: 100px;        height: 100px;        opacity: 0;    }}
 
-.card {
-    color: #9a9da2;
-    cursor: pointer;
-}
+.topNavBar {    padding: 20px 0;    position: fixed;    left: 0;    top: 0;    width: 100%;    transition: all 0.3s;}
+.topNavBar.active{    background-color: #fff;    z-index: 1;    color: #3d4451;    box-shadow: 0px 14px 61px -7px rgba(0,0,0,0.75);    padding: 10px 0 ;    transform: scale();}
+.topNavBar-inner {    padding: 0 16px;}
 
-.clearfix::after {
-    content: '';
-    display: block;
-    clear: both;
-}
+.topNavBar nav {    padding-top: 7px;    float: right;}
+.topNavBar nav > ul {    margin: 0;    padding: 0;}
+.topNavBar nav > ul > li {    float: left;    list-style: none;    margin-left: 17px;    margin-right: 17px;}
+.topNavBar nav > ul > li > a {    text-decoration: none;    font-size: 12px;    color: #ccc;    border-bottom: 3px solid transparent;    border-top: 3px solid transparent;    padding: 5px 0;    display: block;    transition: all 0.3s;}
+.topNavBar nav > ul > li > a:hover{    border-bottom: 3px solid #f55;}
 
-.topNavBar {
-    padding: 20px 0;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-}
+.banner {    background-image: url(./img/mountain.jpg);    height: 515px;    background-size: cover;}
+.banner .mark {    height: 515px;    background-color: rgba(0, 0, 0, 0.6);}
 
-.topNavBar-inner {
-    padding: 0 16px;
-}
+.userCard {    max-width: 940px;    margin: 0 auto;    background-color: white;    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5)}
+.userCard .welcome {    font-family: Helvetica;    font-weight: bold;    color: white;    background-color: rgb(232, 103, 107);
+    padding: 4px 16px;    line-height: 22px;    display: inline-block;    position: relative;}
+.userCard .welcome .triangle {    border: 10px solid transparent;    border-left-color: rgb(232, 103, 107);    
+    border-top-width: 0;    position: absolute;    top: 100%;    left: 5px;}
+.pictureandtext {    padding: 55px;}
+.userCard .picture {    float: left;}
+.userCard .text {    float: left;    margin-left: 65px;    width: 460px;}
+.userCard .text h1{    margin-top: 25px;}
+.userCard .text h3{    margin-top: 15px;}
+.userCard .text hr{    height: 0;    border: none;    border-top: 1px solid #dedede;    margin: 20px 0;}
+.userCard dt{    width: 30%;    float: left;    margin-bottom: 10px;    font-weight: bold;}
+.userCard dd{    color: #aaa;    width: 70%;    float: left;    margin-bottom: 10px;} 
+.userCard footer{    background-color: rgb(232, 103, 107);    text-align: center;}
+.userCard footer svg {    width: 30px;    height: 30px;    fill: white;    vertical-align: top;}
+.userCard footer a{    border-radius: 50%;    width: 50px;    line-height: 30px;    padding: 10px 0;    margin: 12px;    
+    display: inline-block;    transition: background-color 1s;} 
+.userCard footer a:hover {    background-color: #cf5d5f;} 
 
-.topNavBar nav {
-    padding-top: 7px;
-    float: right;
-}
-.topNavBar nav > ul {
-    margin: 0;
-    padding: 0;
-}
+.resumeDown {    text-align: center;   }
+.resumeDown a{    font-size: 16px;    line-height: 16px;    padding: 21px 80px;    border: 1px solid #cdcfd1;    background: #efefef;
+     display: inline-block;    border-radius: 2px;    color: #3d4451;    font-weight: bold;    margin: 32px 0;    transition: box-shadow 0.2s;}
+.resumeDown a:hover {    box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.2)}
 
-.topNavBar nav > ul > li {
-    float: left;
-    list-style: none;
-    margin-left: 17px;
-    margin-right: 17px;
-}
+.selfIntroduction {    max-width: 940px;    margin: 0 auto;    font-family: Helvetica;    text-align: center;    line-height: 2em;    
+    font-size: 1em;}
+.skills,.works{    margin-top: 60px;}
+.skills h2, .works h2{    text-align: center;    margin: 0px auto;    color: #3d4451;    font-size: 36px;}
+.works, .skills {    max-width: 940px;    margin: 60px auto;}
 
-.topNavBar nav > ul > li > a {
-    text-decoration: none;
-    font-size: 12px;
-    color: #ccc;
-    border-bottom: 3px solid transparent;
-    border-top: 3px solid transparent;
-    padding: 5px 0;
-    display: block;
-    transition: all 0.3s;
-}
+.skills ol{    margin-top: 30px;    padding: 42px 50px 20px;    background-color: #fff;    
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);}
+.skills li{    float: left;    width: 48%;    box-sizing: border-box;    cursor: pointer;    }
+.skills li:nth-child(even) {    float: right;    width: 48%;    box-sizing: border-box;    }
+.skills h3 {    font-weight: normal;    margin-bottom: 5px;}
+.skills .proBar {    width: 100%;    height: 5px;    background-color: #fae1e1;    border-radius: 3px;    margin-bottom: 40px;}
+.skills .pro {    height: 100%;    background-color: #e8676b;    border-radius: 3px;}
+.works {    text-align: center;}
+.works nav{    margin-top: 15px;    text-align: center;    display: inline-block;    vertical-align: top;}
+.works ol {    display: inline-block;    vertical-align: top;    margin: 10px 0;}
+.works li{    float: left;    margin-left: 40px;     cursor: pointer;}
+.works li:first-child {    margin-left: 0;}
+.works .worksBar {    height: 5px;    background-color: #fff;    border-radius: 3px;}
 
-.topNavBar nav > ul > li > a:hover{
-    border-bottom: 3px solid #f55;
-}
+#innerWorksBar {    background-color: #e8676b;    height: 5px;    border-radius: 3px;    transition: all 0.3s;}
+.innerWorksBar1 {    width: 55px;    }
 
-.banner {
-    background-image: url(./img/mountain.jpg);
-    height: 515px;
-    background-size: cover;
-}
+.innerWorksBar2 {    margin-left: 55px;    width: 65px;}
+.innerWorksBar3 {    margin-left: 130px;    width: 47%;}
 
-.banner .mark {
-    height: 515px;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-.userCard {
-    max-width: 940px;
-    margin: 0 auto;
-    background-color: white;
-    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5)
-}
-
-.userCard .welcome {
-    font-family: Helvetica;
-    font-weight: bold;
-    color: white;
-    background-color: rgb(232, 103, 107);
-    padding: 4px 16px;
-    line-height: 22px;
-    display: inline-block;
-    position: relative;
-}
-
-.userCard .welcome .triangle {
-    border: 10px solid transparent;
-    border-left-color: rgb(232, 103, 107);
-    border-top-width: 0;
-    position: absolute;
-    top: 100%;
-    left: 5px;
-}
-
-.pictureandtext {
-    padding: 55px;
-}
-.userCard .picture {
-    float: left;
-}
-
-.userCard .text {
-    float: left;
-    margin-left: 65px;
-    width: 460px;
-}
-
-.userCard .text h1{
-    margin-top: 25px;
-}
-.userCard .text h3{
-    margin-top: 15px;
-}
-
-
-.userCard .text hr{
-    height: 0;
-    border: none;
-    border-top: 1px solid #dedede;
-    margin: 20px 0;
-}
-
-.userCard dt{
-    width: 30%;
-    float: left;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-.userCard dd{
-    color: #aaa;
-    width: 70%;
-    float: left;
-    margin-bottom: 10px;
-} 
-
-.userCard footer{
-    background-color: rgb(232, 103, 107);
-    text-align: center;
-}
-
-.userCard footer svg {
-    width: 30px;
-    height: 30px;
-    fill: white;
-    vertical-align: top;
-}
-.userCard footer a{
-    border-radius: 50%;
-    width: 50px;
-    line-height: 30px;
-    padding: 10px 0;
-    margin: 12px;
-    display: inline-block;
-    transition: background-color 1s;
-} 
-
-.userCard footer a:hover {
-    background-color: #cf5d5f;
-} 
-
-.resumeDown {
-    text-align: center;   
-}
-
-.resumeDown a{
-    font-size: 16px;
-    line-height: 16px;
-    padding: 21px 80px;
-    border: 1px solid #cdcfd1;
-    background: #efefef;
-    display: inline-block;
-    border-radius: 2px;
-    color: #3d4451;
-    font-weight: bold;
-    margin: 32px 0;
-    transition: box-shadow 0.2s;
-}
-
-.resumeDown a:hover {
-    box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.2)
-
-}
-
-body > main {
-    margin-top: -340px; 
-}
-
-.selfIntroduction {
-    max-width: 940px;
-    margin: 0 auto;
-    font-family: Helvetica;
-    text-align: center;
-    line-height: 2em;
-    font-size: 1em;
-}
-
-.skills,
-.works{
-    margin-top: 60px;
-}
-
-.skills h2, 
-.works h2{
-    text-align: center;
-    margin: 0px auto;
-    color: #3d4451;
-    font-size: 36px;
-}
-
-.works, .skills {
-    max-width: 940px;
-    margin: 60px auto;
-}
-
-.skills ol{
-    margin-top: 30px;
-    padding: 42px 50px 20px;
-    background-color: #fff;
-    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
-
-}
-
-.skills li{
-    float: left;
-    width: 48%;
-    box-sizing: border-box;
-    cursor: pointer;
-    
-}
-
-.skills li:nth-child(even) {
-    float: right;
-    width: 48%;
-    box-sizing: border-box;
-    
-}
-
-
-.skills h3 {
-    font-weight: normal;
-    margin-bottom: 5px;
-}
-
-.skills .proBar {
-    width: 100%;
-    height: 5px;
-    background-color: #fae1e1;
-    border-radius: 3px;
-    margin-bottom: 40px;
-}
-
-.skills .pro {
-    height: 100%;
-    background-color: #e8676b;
-    border-radius: 3px;
-}
-.works {
-    text-align: center;
-}
-
-.works nav{
-    margin-top: 15px;
-    text-align: center;
-    display: inline-block;
-    vertical-align: top;
-}
-
-.works ol {
-    display: inline-block;
-    vertical-align: top;
-    margin: 10px 0;
-}
-
-.works li{
-    float: left;
-    margin-left: 40px; 
-    cursor: pointer;
-}
-
-.works li:first-child {
-    margin-left: 0;
-}
-
-.works .worksBar {
-    height: 5px;
-    background-color: #fff;
-    border-radius: 3px;
-}
-
-#innerWorksBar {
-    background-color: #e8676b;
-    height: 5px;
-    border-radius: 3px;
-    transition: all 0.3s;
-}
-
-.innerWorksBar1 {
-    width: 55px;
-    
-}
-
-.innerWorksBar2 {
-    margin-left: 55px;
-    width: 65px;
-}
-
-.innerWorksBar3 {
-    margin-left: 130px;
-    width: 47%;
-}
-
-.jobs {
-    position: relative;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    height: 597px;
-}
-
-.jobs > div {
-     /* box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);**/
-    position: absolute;
-} 
+.jobs {    position: relative;    margin-top: 30px;    margin-bottom: 30px;    height: 597px;}
+.jobs > div {     /* box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);**/    position: absolute;} 
 
