@@ -15,38 +15,51 @@ ol, li {    list-style: none;}
 .loadingPage.active {    display: flex;}
 
 .loading {    width: 100px;    height: 100px;    position: relative;}
-.loading::before, .loading::after {    content: '';    width: 0px;    height: 0px;    border-radius: 50%;    background: #000;    position: absolute;    bottom: 0;    top: 0;    left: 0;    right: 0;    margin: auto;    animation:  s linear infinite 1.5s;}
+.loading::before, .loading::after {    content: '';    width: 0px;    height: 0px;    border-radius: 50%;    background: #000;    
+    position: absolute;    bottom: 0;    top: 0;    left: 0;    right: 0;    margin: auto;    animation:  s linear infinite 1.5s;}
 .loading::after {    animation-delay: 0.75s;}
 
-@keyframes s{    0%{        width: 0px;        height: 0px;        opacity: 1;    }    100%{        width: 100px;        height: 100px;        opacity: 0;    }}
+@keyframes s{    0%{        width: 0px;        height: 0px;        opacity: 1;    }    100%{        width: 100px;        height: 100px;        
+    opacity: 0;    }}
 
 .topNavBar {    padding: 20px 0;    position: fixed;    left: 0;    top: 0;    width: 100%;    transition: all 0.3s;    color: #ccc;}
-.topNavBar.active{    background-color: #fff;    z-index: 1;    color: #3d4451;    box-shadow: 0px 14px 61px -7px rgba(0,0,0,0.75);    padding: 10px 0 ;    transform: scale();}
+.topNavBar.active{    background-color: #fff;    z-index: 1;    color: #3d4451;    box-shadow: 0px 14px 61px -7px rgba(0,0,0,0.75);    
+    padding: 10px 0 ;    transform: scale();}
 .topNavBar-inner {    padding: 0 16px;}
 
 .topNavBar nav {    padding-top: 7px;    float: right;}
 .topNavBar nav > ul {    margin: 0;    padding: 0;}
-.topNavBar nav > ul > li {    float: left;    list-style: none;    margin-left: 17px;    margin-right: 17px;}
+.topNavBar nav > ul > li {    float: left;    list-style: none;    margin-left: 17px;    margin-right: 17px;    position: relative; 
+    cursor: pointer;}
 .topNavBar nav > ul > li > a {    text-decoration: none;    font-size: 12px;    color: inherit;    border-bottom: 3px solid transparent;
     border-top: 3px solid transparent;    padding: 5px 0;    display: block;    transition: all 0.3s;   position: relative;}
-.topNavBar nav > ul > li > a:hover::after{
-    content: '';
-    position: absolute;
-    display: block;
-    left: 0;
-    top: 100%;
-    width: 100%;
-    height: 3px;
-    background: rgb(232, 103, 107);
-    animation: navBorder .5s;
+.topNavBar nav > ul > li.active > a::after{    content: '';    position: absolute;    display: block;    left: 0;    top: 100%;    
+    width: 100%;    height: 3px;    background: rgb(232, 103, 107);    animation: navBorder .5s;}
+.topNavBar .submenu {
+    display: none;
 }
-@keyframes navBorder{
-    0%{
-        width: 0;
+.topNavBar li.active .submenu{
+    display: block;
+    top: 100%;
+    position: absolute;
+    right: 0%;
+    white-space: nowrap;
+    padding: 10px 20px;
+    background: white;
+    box-shadow: 0px 4px 28px 5px rgba(0,0,0,0.33);
+    animation: submenuMove .5s;
+}
+@keyframes submenuMove {
+    0% {
+        margin-right: 100%; 
     }
-    100%{
-        width: 100%;
+    100% {
+        margin-right: 0;
     }
+}
+@keyframes navBorder{    
+    0%{ width: 0;    }
+    100%{    width: 100%;}
 }
 
 .banner {    background-image: url(./img/mountain.jpg);    height: 515px;    background-size: cover;}
@@ -73,7 +86,8 @@ ol, li {    list-style: none;}
 
 .resumeDown {    text-align: center;   }
 .resumeDown a{    font-size: 16px;    line-height: 16px;    padding: 21px 80px;    border: 1px solid #cdcfd1;    background: #efefef;
-     display: inline-block;    border-radius: 2px;    color: #3d4451;    font-weight: bold;    margin: 32px 0;    transition: box-shadow 0.2s;}
+     display: inline-block;    border-radius: 2px;    color: #3d4451;    font-weight: bold;    margin: 32px 0;    
+     transition: box-shadow 0.2s;}
 .resumeDown a:hover {    box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.2)}
 
 .selfIntroduction {    max-width: 940px;    margin: 0 auto;    font-family: Helvetica;    text-align: center;    line-height: 2em;    
