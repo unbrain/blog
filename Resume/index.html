@@ -7,6 +7,7 @@
     <title>朝阳的个人简历</title>
     <link rel="stylesheet" href="./style.css">
     <script src="//at.alicdn.com/t/font_568929_jk5nwj0qew7jsjor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
     <style type="text/css">
         .icon {
             width: 1em;
@@ -19,7 +20,7 @@
     </style>
 </head>
 <body>
-    <div id="loading" class="loadingPage active">
+    <div id="loading" class="loadingPage ">
         <div class="loading"></div>
     </div>
 
@@ -60,7 +61,7 @@
         <div class="mark"></div>
     </div>
     <main>
-        <div class="userCard" id="jAbout">
+        <div data-y class="userCard" id="jAbout">
             <div class="pictureandtext clearfix">
                 <div class="picture">
                     <img src="./img/portrait.jpg" alt="头像">
@@ -114,7 +115,7 @@
             我只想告诉你们，饭可以吃，妹可以撩，容可以整，梦可以做， 但你要是不爱学习，<br>
             对不起， 我们做不了朋友！ 我爱读书！我爱学习！学习使我快乐！
         </p>
-        <section class="skills" id="jSkills">
+        <section data-y class="skills" id="jSkills">
             <h2>技能</h2>
             <ol class="clearfix">
                 <li>
@@ -155,7 +156,7 @@
                 </li>
             </ol>
         </section>
-        <section class="works" id="jWorks">
+        <section data-y class="works" id="jWorks">
             <h2>作品集</h2>
             <nav>
                 <ol class="clearfix">
