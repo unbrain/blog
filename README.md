@@ -6,4 +6,4 @@
 
 ### [动态轮播](https://unbrain.github.io/myResume/imgChange/index.html)
 
-### [无缝轮播](https://unbrain.github.io/myResume/seamless carousel/index.html)
+### [无缝轮播](https://unbrain.github.io/myResume/seamless/index.html)
