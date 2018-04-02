@@ -1,4 +1,4 @@
-let allBtns = $('#imgBtns > span')
+let allBtns = $('#imgBtns > div')
 let size = allBtns.length
 let n = 0;
 allBtns.eq(n).addClass('green')
@@ -6,7 +6,7 @@ allBtns.eq(n).addClass('green')
 for(let i = 0; i < size; i++){
     $(allBtns[i]).on('click', function(e){
         let index = $(e.currentTarget).index()
-        let move = index * (-400)
+        let move = index * (-800)
         $('#images').css({
             transform: 'translate(' + move + 'px)'
         })
