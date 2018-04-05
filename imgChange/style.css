@@ -31,22 +31,16 @@
 
 .buttonimgs > div {
     margin: 0 0.25em;
-    width: 1em;
-    height: 1em;
-    border-radius: 100%;
-    display: inline-block;
-}
-
-.buttonimgs > div > span {
-    margin: 0 0.25em;
     width: 0.5em;
     height: 0.5em;
     border-radius: 100%;
-    display: inline-block;
-    background: #fff;
+    display: inline-block;    
 }
 
 .green {
-    width: 1em;
-    height: 1em;
+    background: cornflowerblue;
+}
+
+.white {
+    background: #fff;
 }
