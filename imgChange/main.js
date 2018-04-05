@@ -1,7 +1,7 @@
 let allBtns = $('#imgBtns > div')
 let size = allBtns.length
 let n = 0;
-allBtns.eq(n).addClass('green').siblings('.green').addClass('white')
+allBtns.eq(n).addClass('green').siblings('').addClass('white')
 
 for(let i = 0; i < size; i++){
     $(allBtns[i]).on('click', function(e){
@@ -10,7 +10,7 @@ for(let i = 0; i < size; i++){
         $('#images').css({
             transform: 'translate(' + move + 'px)'
         })
-        allBtns.eq(index).addClass('green').siblings('.green').removeClass('green').addClass('white')
+        allBtns.eq(index).removeClass('white').addClass('green').siblings('').removeClass('green').addClass('white')
         n = index 
     })
 }
