@@ -22,28 +22,6 @@
 
 //------------------------------------------------------
 
-// let display = false
-// $(clickMe).on('click', function () {
-//     if(display){
-//         $(popover).hide()
-//         display = false
-//     }else{
-//         $(popover).show()
-//         display = true
-//     }
-// })
-
-// $(wrapper).on('click', function (e){
-//     e.stopPropagation()
-// })
-
-// $(document).on('click', function () {
-//     $(popover).hide()
-//     display = false
-// })
-
-//------------------------------------------------------
-
 let display = false
 $(clickMe).on('click', function () {
     if(display){
@@ -52,13 +30,19 @@ $(clickMe).on('click', function () {
     }else{
         $(popover).show()
         display = true
-        setTimeout(function () {
-            $(document).one('click', function () {
-                $(popover).hide()
-                display = false
-            })
-        }, 0)
     }
-
 })
+
+$(wrapper).on('click', function (e){
+    e.stopPropagation()
+})
+
+$(document).on('click', function () {
+    $(popover).hide()
+    display = false
+})
+
+//------------------------------------------------------
+
+
 
