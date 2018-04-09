@@ -6,18 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>朝阳的个人简历</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/css/swiper.min.css">
     <script src="//at.alicdn.com/t/font_568929_jk5nwj0qew7jsjor.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
-    <style type="text/css">
-        .icon {
-            width: 1em;
-            height: 1em;
-            vertical-align: -0.15em;
-            fill: white;
-            overflow: hidden;
-            
-        }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/js/swiper.min.js"></script>
 </head>
 <body>
     <div id="loading" class="loadingPage ">
@@ -158,38 +150,24 @@
         </section>
         <section data-y class="works" id="jWorks">
             <h2>作品集</h2>
-            <nav>
-                <ol class="clearfix">
-                    <li id="works1">所有</li>
-                    <li id="works2">框架</li>
-                    <li id="works3">原生JS &amp; CSS</li>
-                </ol>
-                <div class="worksBar">
-                    <div id="innerWorksBar" class="innerWorksBar1"></div>
+            <div class="works-container">
+                <!-- Slider main container -->
+                <div class="swiper-container">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <img src="./img/bookmark.png" class="swiper-slide">
+                        <img src="./img/canvas1.png" class="swiper-slide">
+                        <img src="./img/sidershow.png" class="swiper-slide">
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+                
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
-            </nav>
-            <script>
-                works1.onclick =function (){
-                    innerWorksBar.className = 'innerWorksBar1';
-                }
-                works2.onclick = function () {
-                        innerWorksBar.className = 'innerWorksBar2';
-                    }
-                works3.onclick = function () {
-                        innerWorksBar.className = 'innerWorksBar3';
-                    }
-            </script>
-            <div class="jobs">
-                <div class="big" style="left: 0px; top: 0px">
-                    <img src="./img/works1.jpg" alt="" >
-                </div>
-                <div class="small1" style="left: 646px; top: 0px">
-                    <img src="./img/works2.jpg" alt="" >
-                </div>
-                <div class="small2" style="left: 646px; top: 312px">
-                    <img src="./img/works3.jpg" alt="" >
-                </div>
-            </div>
+            </div>          
         </section>
 
         
