@@ -1,4 +1,5 @@
 !function(){
+    
     let closeTags = document.querySelectorAll('[data-y]')
 
     for (let i = 0; i < closeTags.length; i++) {
