@@ -1,16 +1,6 @@
 !function(){
-    let view = document.querySelector('section.messages')
-
-    let controller = {
-        view: null,
-        form: null,
-        init: function(view){
-            this.view = view
-            this.form = document.querySelector('#postMessagesForm')
-            this.initAv()
-            this.bindEvents()
-        },
-        initAv: function(){
+    let model = {
+        init: function(){
             var APP_ID = 'PtKpzrwlCy0XfKI9zfy2CpQt-gzGzoHsz';
             var APP_KEY = 'laOC7Xbywphjc0tqA99USHj2';
 
@@ -18,10 +8,42 @@
                 appId: APP_ID,
                 appKey: APP_KEY
             });
+            
         },
-        loadmessages: function(){
+        fetch: function(){
             var query = new AV.Query('messages');
-            query.find().then(function (messages) {
+            return query.find()
+        },
+        save: function(name, content){
+            var TestObject = AV.Object.extend('messages');
+            var testObject = new TestObject();
+            return testObject.save({
+                name: name,
+                messages: content
+            })
+        },
+    }
+
+    let view = document.querySelector('section.messages')
+
+    let controller = {
+        model: null,
+        view: null,
+        form: null,
+
+        init: function(view,model){
+            this.model = model
+            this.view = view
+            this.form = document.querySelector('#postMessagesForm')
+            
+            this.model.init()
+            this.loadmessages()
+            this.bindEvents()
+            
+        },
+        
+        loadmessages: function(){
+            this.model.fetch().then(function (messages) {
                 let arr = messages.map((e) => e.attributes)
                 //console.log(arr)
                 arr.forEach(element => {
@@ -30,12 +52,13 @@
                     messagesList.appendChild(li)
                 });
             }, function (error) {
+                console.log('cuo')
                 // 异常处理
             });
         },
         bindEvents: function(){
             
-            myForm.addEventListener('submit', function (e) {
+            this.form.addEventListener('submit', function (e) {
                 e.preventDefault()
                 this.savemessages()
             })
@@ -44,12 +67,7 @@
             let myForm = this.form
             let name = myForm.querySelector('input[name = name]').value
             let content = myForm.querySelector('input[name = content]').value
-            var TestObject = AV.Object.extend('messages');
-            var testObject = new TestObject();
-            testObject.save({
-                name: name,
-                messages: content
-            }).then(function (object) {
+            this.model.save(name, content).then(function (object) {
                 let element = object.attributes
                 let li = document.createElement('li')
                 li.innerText = element.name + ': ' + element.messages
@@ -60,10 +78,5 @@
             })
         },
     }
-
-    
-    controller.init(view)
-
-
-
+    controller.init(view, model)
 }.call()
