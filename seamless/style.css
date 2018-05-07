@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.window {
+    margin: 20px auto;
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.img {
+    position: relative;
+}
+
+.img > img {
+    top: 0;
+    width: 400px;
+    position: absolute;
+    transition: all .5s;
+}
+
+.img > img.right{
+    transform: translateX(100%);
+}
+
+.img > img.current{
+    left: 0;
+    transform: translateX(0);
+    z-index: 1;
+}
+
+.img > img.left{
+    transform: translateX(-100%);
+    z-index: 1;
+}
