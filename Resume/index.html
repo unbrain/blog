@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,41 +8,48 @@
     <title>朝阳的个人简历</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/css/swiper.min.css">
-    
 </head>
+
 <body>
     <div id="loading" class="loadingPage ">
         <div class="loading"></div>
     </div>
 
+    <div id="particles-js"></div>
     <div class="topNavBar clearfix" id="topNav">
         <div class="topNavBar-inner">
-            <a class="logo" src="#" alt="logo" >
-                <span class="rs">ZY</span><span class="card">card</span>
+            <a class="logo" src="#" alt="logo">
+                <span class="lzy">Lzy</span>
             </a>
             <nav class="meau">
                 <ul class="clearfix">
-                    <li class="meauTrigger"><a href="#jAbout" >关于</a></li>
-                    <li class="meauTrigger"><a href="#jSkills" >技能</a></li>
                     <li class="meauTrigger">
-                        <a href="#jWorks" >作品</a>
+                        <a href="#jAbout">关于</a>
+                    </li>
+                    <li class="meauTrigger">
+                        <a href="#jSkills">技能</a>
+                    </li>
+                    <li class="meauTrigger">
+                        <a href="#jWorks">作品</a>
                         <ul class="submenu">
                             <li>作品1</li>
                             <li>作品2</li>
                             <li>作品3</li>
                         </ul>
                     </li>
-                    <li class="meauTrigger"><a href="#jMessages" >留言</a></li>
-                    <li class="meauTrigger"><a href="#jCal" >博客</a></li>
                     <li class="meauTrigger">
-                        <a href="#jComms" >联系方式</a>
-                        <ul class="submenu">
-                            <li>方式1</li>
-                            <li>方式2</li>
-                            <li>方式3</li>
-                        </ul>
+                        <a href="#jMessages">留言</a>
                     </li>
-                    <li class="meauTrigger"><a href="#jOther" >其他</a></li>
+                    <!-- <li class="meauTrigger"><a href="#jCal" >博客</a></li>
+                            <li class="meauTrigger">
+                                <a href="#jComms" >联系方式</a>
+                                <ul class="submenu">
+                                    <li>方式1</li>
+                                    <li>方式2</li>
+                                    <li>方式3</li>
+                                </ul>
+                            </li>
+                            <li class="meauTrigger"><a href="#jOther" >其他</a></li> -->
                 </ul>
             </nav>
         </div>
@@ -53,11 +61,10 @@
     <main>
         <div data-y class="userCard" id="jAbout">
             <div class="pictureandtext clearfix">
-                <div class="picture">
-                    <img src="./img/portrait.jpg" alt="头像">
-                </div>
                 <div class="text">
-                    <span class="welcome">Hello<span class="triangle"></span></span>
+                    <span class="welcome">前端工程师
+                        <span class="triangle"></span>
+                    </span>
                     <h1>刘朝阳</h1>
                     <p>认真的切图仔</p>
                     <hr>
@@ -65,13 +72,17 @@
                         <dt>年龄</dt>
                         <dd>22</dd>
                         <dt>学校</dt>
-                        <dd>成都工业学院</dd>
-                        <dt>邮箱</dt>     
+                        <dd>二本</dd>
+                        <dt>邮箱</dt>
                         <dd>marsorsun@gmil.com</dd>
                         <dt>手机</dt>
-                        <dd>18349108866</dd>
+                        <dd>——————</dd>
                     </dl>
                 </div>
+                <div class="picture">
+                    
+                </div>
+               
             </div>
             <footer class="media">
                 <a href="#">
@@ -94,16 +105,16 @@
                         <use xlink:href="#icon-gmail"></use>
                     </svg>
                 </a>
-               
+
             </footer>
         </div>
         <p class="resumeDown">
             <a href="./HowToSearch.pdf" target="_blank" class="button" download="">下载 PDF 简历</a>
         </p>
-        
+
         <p class="selfIntroduction">
-            我只想告诉你们，饭可以吃，妹可以撩，容可以整，梦可以做， 但你要是不爱学习，<br>
-            对不起， 我们做不了朋友！ 我爱读书！我爱学习！学习使我快乐！
+            我只想告诉你们，饭可以吃，妹可以撩，容可以整，梦可以做， 但你要是不爱学习，
+            <br> 对不起， 我们做不了朋友！ 我爱读书！我爱学习！学习使我快乐！
         </p>
         <section data-y class="skills" id="jSkills">
             <h2>技能</h2>
@@ -160,13 +171,13 @@
                     </div>
                     <!-- If we need pagination -->
                     <div class="swiper-pagination"></div>
-                
+
                     <!-- If we need navigation buttons -->
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
                 </div>
-            </div>          
-        </section> 
+            </div>
+        </section>
         <section data-y class="messages" id="jMessages">
             <h2>留言</h2>
             <div class="messages-container">
@@ -174,20 +185,29 @@
 
                 </ol>
                 <form action="" id="postMessagesForm">
-                    <label for="">姓名：<input type="text" name="name" id=""></label>
+                    <label for="">姓名：
+                        <input type="text" name="name" id="">
+                    </label>
+
+                    <label for="">内容：
+                        <input type="text" name="content" id="">
+                    </label>
+                    <button type="submit">提交</button>
                     
-                    <label for="">内容：<input type="text" name="content" id=""></label>
-                    
-                    <input type="submit" value="提交">
                 </form>
             </div>
         </section>
     </main>
+
+
+
     <!-- 依赖 -->
     <script src="//at.alicdn.com/t/font_568929_jk5nwj0qew7jsjor.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/js/swiper.min.js"></script>
     <script src="//cdn1.lncld.net/static/js/3.6.4/av-min.js"></script>
+    <script src="./js/scroll.js"></script>
+    <script src="./js/particles.js"></script>
     <!-- 本地 -->
     <script src="./js/auto-side-up.js"></script>
     <script src="./js/swiper.js"></script>
@@ -195,4 +215,5 @@
     <script src="./js/soomth-meauTri.js"></script>
     <script src="./js/av-messages.js"></script>
 </body>
+
 </html>

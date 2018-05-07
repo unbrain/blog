@@ -31,8 +31,6 @@
                     this.movToA(e)
                 }
             }
-            
-            
         },
         addAActive: function(aMeauTris){
             for (let i = 0; i < aMeauTris.length; i++) {
