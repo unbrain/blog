@@ -1,32 +1,31 @@
 * {margin: 0;padding: 0;}
 body{margin: 0;background: #efefef;color: black;}
-body main {margin-top: -340px; }
+body main{margin-top: -340px; }
 a{color: inherit;text-decoration: none;}
 ol, li{list-style: none;}
-.logo {float: left;font-size: 24px;font-family: 'Arial Black';padding-top: 3px;padding-bottom: 4px;
-font-weight: bold;}
+.logo{float: left;font-size: 24px;font-family: 'Arial Black';padding-top: 3px;padding-bottom: 4px;font-weight: bold;}
 button{padding: .5em 1.5em;border: transparent;border-radius: .3em;background: #42A1FF;cursor: pointer;}
 input{height: 2em;color: #C1C2C9;padding: 0 .5em;border-radius: 5px;}
 
 .lzy {margin-right: 4px;color: #323232;cursor: pointer;border-top: 2px solid #9a9da2; border-bottom: 2px solid #9a9da2;}
 .clearfix::after {content: '';display: block;clear: both;}
-.icon {width: 1em;  height: 1em;vertical-align: -0.15em;fill: white;overflow: hidden;}
+.icon{width: 1em;  height: 1em;vertical-align: -0.15em;fill: white;overflow: hidden;}
 
 .loadingPage{display: none;position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: #9a9da2;
 z-index: 1;justify-content: center;align-items: center;}
 .loadingPage.active {display: flex;}
 
-.loading {width: 100px;height: 100px;position: relative;}
+.loading{width: 100px;height: 100px;position: relative;}
 .loading::before, .loading::after {content: '';width: 0px;height: 0px;border-radius: 50%;background: #000;
 position: absolute;bottom: 0;top: 0;left: 0;right: 0;margin: auto;animation:  s linear infinite 1.5s;}
-.loading::after {animation-delay: 0.75s;}
+.loading::after{animation-delay: 0.75s;}
 
-@keyframes s{0%{width: 0px;height: 0px;opacity: 1;}100%{width: 100px;height: 100px;
-opacity: 0;}}
+@keyframes s{0%{width: 0px;height: 0px;opacity: 1;}100%{width: 100px;height: 100px;opacity: 0;}}
 
-.topNavBar {padding: 20px 0;position: fixed;left: 0;top: 0;width: 100%;transition: all 0.3s;color: #ACAEB1;}
+.topNavBar{padding: 20px 0;position: fixed;left: 0;top: 0;width: 100%;transition: all 0.3s;color: #ACAEB1;}
 .topNavBar.active{background-color: #fff;   z-index: 1;color: #3d4451;box-shadow: 0px 14px 61px -7px rgba(0,0,0,0.75);
 padding: 10px 0 ;transform: scale();}
+.topNavBar-show{display: none;}
 .topNavBar-inner {padding: 0 16px;}
 
 .topNavBar nav {padding-top: 7px;display: flex;justify-content: center;}
@@ -44,18 +43,8 @@ width: 100%;height: 3px;background: #9a9da2;animation: navBorder .5s;}
 .topNavBar .submenu {display: none;}
 .topNavBar li.active .submenu{display: block;top: 100%;position: absolute;right: 0%;white-space: nowrap;
 padding: 10px 20px; background: white;box-shadow: 0px 4px 28px 5px rgba(0,0,0,0.33);animation: submenuMove .5s;}
-@keyframes submenuMove {
-0% {
-margin-right: 100%; 
-}
-100% {
-margin-right: 0;
-}
-}
-@keyframes navBorder{
-0%{ width: 0;}
-100%{width: 100%;}
-}
+@keyframes submenuMove {0% {margin-right: 100%; }100%{margin-right: 0;}}
+@keyframes navBorder{0%{ width: 0;}100%{width: 100%;}}
 
 .banner {background: url(./img/color.jpg)  center;height: 515px;background-size: cover;}
 .banner .mark {height: 515px;background-color: rgba(0, 0, 0, 0.2);}
@@ -94,39 +83,42 @@ font-size: 1em;}
 .works, .skills , .messages
 {max-width: 940px;margin: 60px auto;}
 
-.skills ol{   padding: 42px 50px 20px;background-color: #fff;
-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);}
+.skills ol{padding: 42px 50px 20px;background-color: #fff;box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);}
 .skills li{float: left;width: 48%;box-sizing: border-box;cursor: pointer;overflow: hidden;}
 .skills li:nth-child(even) {float: right;width: 48%;box-sizing: border-box;}
-.skills h3 {font-weight: normal;margin-bottom: 5px;}
+.skills h3{font-weight: normal;margin-bottom: 5px;}
 .skills .proBar {width: 100%;height: 5px;background-color: #fae1e1;border-radius: 3px;margin-bottom: 40px;}
 .skills .pro {height: 100%;background-color: #323232;border-radius: 3px;transform: translateX(0);   transition: all 1s;}
-.skills.offset .pro {   transform: translateX(-100%);}
+.skills.offset .pro {transform: translateX(-100%);}
 
-.works {text-align: center; }
+.works {text-align: center;}
 .works .swiper-container {max-width: 940px;height: 470px;}
-.works .works-container, .messages .messages-container
-{box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);background-color: #fff;}
-
+.works .works-container, .messages .messages-container{box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);background-color: #fff;}
 
 .messages ol {border-left: 0.5em solid #323232; }
 .messages ol > li {padding: 1em 2em;border-bottom: 1px solid #ececec;}
-.messages form {
- padding: 1em 2em;
-text-align: center;
-}
-.messages form label{
-    margin: 1em;
-}
-[data-y].offset{
-  transform: translateY(400px);
-}
-[data-y]{
-  transform: translateY(0);
-  transition: all 1s;
-}
-#particles-js{
-    position: fixed;
-    height: 100vh;
-    width: 100%;
+.messages form {padding: 1em 2em;text-align: center;}
+.messages form label{margin: 1em;}
+[data-y].offset{transform: translateY(400px);}
+[data-y]{transform: translateY(0);transition: all 1s;}
+#particles-js{position: fixed;height: 100vh;width: 100%;}
+
+@media (max-width: 414px){
+.topNavBar-show{display: block;margin: 8px;}
+
+.topNavBar nav {padding-top: 7px;display: flex;justify-content: center;flex-direction: column;}
+
+.topNavBar nav > ul > li {cursor: pointer;float: none;display: none;}
+.topNavBar nav > ul > li > a {font-size: 12px;color: inherit;border-bottom: 3px solid transparent;
+border-top: 3px solid transparent;padding: 5px 0;display: block;transition: all 0.3s;   position: relative;}
+.topNavBar nav > ul > li.active > a::before,
+.topNavBar nav > ul > li.heightLight > a::before{content: '';position: absolute;display: block;left: 0;bottom: 100%;
+width: 100%;height: 3px;background: transparent;animation: navBorder .5s;}
+.topNavBar .submenu {display: none;}
+.topNavBar nav > ul > li.active > a::after,
+.topNavBar nav > ul > li.heightLight > a::after{content: '';position: absolute;display: block;left: 0;top: 100%;
+width: 100%;height: 3px;background: #9a9da2;animation: navBorder .5s;}
+.topNavBar .submenu {display: none;}
+.topNavBar li.active .submenu{display: block;top: 100%;position: absolute;right: 0%;white-space: nowrap;
+padding: 10px 20px; background: white;box-shadow: 0px 4px 28px 5px rgba(0,0,0,0.33);animation: submenuMove .5s;}
 }
