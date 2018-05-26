@@ -37,11 +37,11 @@ padding: 10px 0 ;transform: scale();}
 border-top: 3px solid transparent;padding: 5px 0;display: block;transition: all 0.3s;   position: relative;}
 .topNavBar nav > ul > li.active > a::before,
 .topNavBar nav > ul > li.heightLight > a::before{content: '';position: absolute;display: block;left: 0;bottom: 100%;
-width: 100%;height: 3px;background: #B4E1DC;animation: navBorder .5s;}
+width: 100%;height: 3px;background: #B4E1DC;animation: navBorder .5s;border-radius: 20%;}
 .topNavBar .submenu {display: none;}
 .topNavBar nav > ul > li.active > a::after,
 .topNavBar nav > ul > li.heightLight > a::after{content: '';position: absolute;display: block;left: 0;top: 100%;
-width: 100%;height: 3px;background: #B4E1DC;animation: navBorder .5s;}
+width: 100%;height: 3px;background: #B4E1DC;animation: navBorder .5s; border-radius: 20%;}
 .topNavBar .submenu {display: none;}
 .topNavBar li.active .submenu{display: block;top: 100%;position: absolute;right: 0%;white-space: nowrap;
 padding: 10px 20px; background: white;box-shadow: 0px 4px 28px 5px rgba(0,0,0,0.33);animation: submenuMove .5s;}
@@ -71,14 +71,14 @@ border-top-width: 0;position: absolute;top: 100%;left: 5px;}
 display: inline-block;transition: background-color 1s;} 
 .userCard footer a:hover {background-color: #99BFBC;} 
 
-.resumeDown {text-align: center;   }
+.resumeDown {text-align: center;}
 .resumeDown a{font-size: 16px;line-height: 16px;padding: 21px 80px;border: 1px solid #474D56;background: #27292E;
- display: inline-block;border-radius: 2px;color: #3d4451;font-weight: bold;margin: 32px 0;
+ display: inline-block;border-radius: 2px;color: #9D9EA2;;font-weight: bold;margin: 32px 0;
  transition: box-shadow 0.2s;}
 .resumeDown a:hover {box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.2)}
 
 .selfIntroduction {max-width: 940px;margin: 0 auto;font-family: Helvetica;text-align: center;line-height: 2em;
-font-size: 1em;}
+font-size: 1.6em; color: #EBEBEC;}
 .skills, .works, .messages
 {margin-top: 60px;}
 .skills h2, .works h2, .messages h2
@@ -195,4 +195,15 @@ width: 100%;height: 3px;background: #9a9da2;animation: navBorder .5s;}
 .topNavBar .submenu {display: none;}
 .topNavBar li.active .submenu{display: block;top: 100%;position: absolute;right: 0%;white-space: nowrap;
 padding: 10px 20px; background: white;box-shadow: 0px 4px 28px 5px rgba(0,0,0,0.33);animation: submenuMove .5s;}
+}
+
+.blog{
+    position: fixed;
+    background: transparent;
+    right: 0;
+    z-index: 2;
+}
+.blogicon{
+    width: 10em;
+    height: 8em;
 }
