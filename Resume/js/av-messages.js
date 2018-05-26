@@ -12,6 +12,8 @@
         },
         fetch: function(){
             var query = new AV.Query('messages');
+            query.descending('createdAt');
+            query.limit(6);// 最多返回 6 条结果
             return query.find()
         },
         save: function(name, content){
@@ -44,12 +46,25 @@
         
         loadmessages: function(){
             this.model.fetch().then(function (messages) {
-                let arr = messages.map((e) => e.attributes)
-                //console.log(arr)
+                messages.reverse()
+                let arr = messages.map((e) => {
+                    data = e.createdAt.toLocaleDateString()
+                    
+                    return { ...e.attributes, data } 
+                })
+                    console.log(arr)
                 arr.forEach(element => {
-                    let li = document.createElement('li')
-                    li.innerText = element.name + ': ' + element.messages
-                    messagesList.appendChild(li)
+                    let div = document.createElement('div')
+                    let messages = document.createElement('h3')
+                    messages.textContent = element.messages
+                    let time = document.createElement('div')
+                    time.textContent = element.data
+                    let name = document.createElement('p')
+                    name.textContent = element.name
+                    div.appendChild(time)
+                    div.appendChild(messages)
+                    div.appendChild(name)
+                    messagesList.appendChild(div)
                 });
             }, function (error) {
                 console.log('cuo')
@@ -57,7 +72,6 @@
             });
         },
         bindEvents: function(){
-            
             this.form.addEventListener('submit',  (e) => {
                 e.preventDefault()
                 this.savemessages()
@@ -69,9 +83,17 @@
             let content = myForm.querySelector('input[name = content]').value
             this.model.save(name, content).then(function (object) {
                 let element = object.attributes
-                let li = document.createElement('li')
-                li.innerText = element.name + ': ' + element.messages
-                messagesList.appendChild(li)
+                let div = document.createElement('div')
+                let messages = document.createElement('h3')
+                messages.textContent = element.messages
+                let time = document.createElement('div')
+                time.textContent = object.createdAt.toLocaleDateString()
+                let name = document.createElement('p')
+                name.textContent = element.name
+                div.appendChild(time)
+                div.appendChild(messages)
+                div.appendChild(name)
+                messagesList.appendChild(div)
                 //alert('留言成功!');
                 myForm.querySelector('input[name = name]').value = ''
                 myForm.querySelector('input[name = content]').value = ''
