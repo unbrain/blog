@@ -1,7 +1,6 @@
 {
   "name": "resume",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +8,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "particles.js": "^2.0.0"
-  }
+    "particles.js": "^2.0.0",
+    "rellax": "^1.6.2"
+  },
+  "keywords": [],
+  "description": ""
 }

@@ -1,5 +1,5 @@
-!function(){
-    
+! function () {
+
     let closeTags = document.querySelectorAll('[data-y]')
 
     // for (let i = 0; i < closeTags.length; i++) {
@@ -30,16 +30,44 @@
     }
 }.call()
 
-window.sr = ScrollReveal({ reset: true });
+window.sr = ScrollReveal({
+    reset: true
+});
 
 // Customizing a reveal set
-sr.reveal('.userCard', { duration: 1000, opacity: 0,});
-sr.reveal('.resumeDown', { duration: 1000, opacity: 0, });
-sr.reveal('.selfIntroduction', { duration: 1000, opacity: 0, });
-sr.reveal('.skills', { duration: 1000, opacity: 0, });
-sr.reveal('.works', { duration: 1000, opacity: 0, });
-sr.reveal('.messages', { duration: 1000, opacity: 0, });
+sr.reveal('.userCard', {
+    duration: 1000,
+    opacity: 0,
+});
+sr.reveal('.resumeDown', {
+    duration: 1000,
+    opacity: 0,
+});
+sr.reveal('.selfIntroduction', {
+    duration: 1000,
+    opacity: 0,
+});
+sr.reveal('.skills', {
+    duration: 1000,
+    opacity: 0,
+});
+sr.reveal('.works', {
+    duration: 1000,
+    opacity: 0,
+});
+sr.reveal('.messages', {
+    duration: 1000,
+    opacity: 0,
+});
 particlesJS.load('particles-js', './js/particles.json', function () {
     console.log('callback - particles.js config loaded');
 });
 
+var rellax = new Rellax('.rellax', {
+    speed: -3,
+    center: true,
+    wrapper: null,
+    round: true,
+    vertical: true,
+    horizontal: false
+});
